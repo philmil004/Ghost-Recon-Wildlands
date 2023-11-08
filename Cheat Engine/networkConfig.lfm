@@ -1,0 +1,186 @@
+object frmNetworkConfig: TfrmNetworkConfig
+  Left = 329
+  Height = 289
+  Top = 205
+  Width = 442
+  Caption = 'Connect to server'
+  ClientHeight = 289
+  ClientWidth = 442
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.2.0'
+  object GroupBox1: TGroupBox
+    Left = 0
+    Height = 218
+    Top = 0
+    Width = 442
+    Align = alClient
+    Caption = 'Discovered servers'
+    ClientHeight = 198
+    ClientWidth = 438
+    TabOrder = 0
+    object ListView1: TListView
+      Left = 0
+      Height = 198
+      Top = 0
+      Width = 438
+      Align = alClient
+      Columns = <      
+        item
+          Caption = 'IP'
+          Width = 200
+        end      
+        item
+          Caption = 'Port'
+          Width = 81
+        end>
+      PopupMenu = PopupMenu1
+      ReadOnly = True
+      RowSelect = True
+      TabOrder = 0
+      ViewStyle = vsReport
+      OnDblClick = ListView1DblClick
+      OnSelectItem = ListView1SelectItem
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 71
+    Top = 218
+    Width = 442
+    Align = alBottom
+    AutoSize = True
+    BevelOuter = bvNone
+    ClientHeight = 71
+    ClientWidth = 442
+    TabOrder = 1
+    object edtHost: TEdit
+      AnchorSideLeft.Control = Label1
+      AnchorSideTop.Control = Label1
+      AnchorSideTop.Side = asrBottom
+      Left = 8
+      Height = 23
+      Top = 15
+      Width = 216
+      TabOrder = 0
+    end
+    object edtPort: TEdit
+      AnchorSideLeft.Control = edtHost
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Control = edtHost
+      Left = 230
+      Height = 23
+      Top = 15
+      Width = 48
+      BorderSpacing.Left = 6
+      TabOrder = 1
+      Text = '52736'
+    end
+    object Label1: TLabel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideTop.Control = Panel1
+      Left = 8
+      Height = 15
+      Top = 0
+      Width = 25
+      BorderSpacing.Left = 8
+      Caption = 'Host'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      AnchorSideLeft.Control = edtPort
+      AnchorSideTop.Control = edtPort
+      AnchorSideBottom.Control = edtPort
+      Left = 230
+      Height = 15
+      Top = 0
+      Width = 22
+      Anchors = [akLeft, akBottom]
+      Caption = 'Port'
+      ParentColor = False
+    end
+    object Panel2: TPanel
+      AnchorSideLeft.Control = Panel1
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = edtHost
+      AnchorSideTop.Side = asrBottom
+      Left = 143
+      Height = 25
+      Top = 42
+      Width = 157
+      AutoSize = True
+      BorderSpacing.Top = 4
+      BorderSpacing.Bottom = 4
+      BevelOuter = bvNone
+      ClientHeight = 25
+      ClientWidth = 157
+      TabOrder = 2
+      object btnConnect: TButton
+        AnchorSideLeft.Control = Panel2
+        AnchorSideTop.Control = Panel2
+        Left = 0
+        Height = 25
+        Top = 0
+        Width = 75
+        AutoSize = True
+        Caption = 'Connect'
+        Constraints.MinHeight = 25
+        Constraints.MinWidth = 75
+        Default = True
+        OnClick = btnConnectClick
+        TabOrder = 0
+      end
+      object Button2: TButton
+        AnchorSideLeft.Control = btnConnect
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = Panel2
+        Left = 82
+        Height = 25
+        Top = 0
+        Width = 75
+        AutoSize = True
+        BorderSpacing.Left = 7
+        Cancel = True
+        Caption = 'Cancel'
+        Constraints.MinHeight = 25
+        Constraints.MinWidth = 75
+        ModalResult = 2
+        TabOrder = 1
+      end
+    end
+  end
+  object PopupMenu1: TPopupMenu
+    Images = ctsImageList
+    Left = 117
+    Top = 60
+    object MenuItem1: TMenuItem
+      Caption = 'Refresh list'
+      ImageIndex = 0
+      OnClick = MenuItem1Click
+    end
+  end
+  object ctsImageList: TImageList
+    Left = 291
+    Top = 85
+    Bitmap = {
+      4C7A010000001000000010000000FB0100000000000078DAFBFFFF3FC37F34FC
+      E4E913C175A796074E3ED2560CC445EB4E2EF73B7BF18C72E28CE039FFB1A887
+      E1A7CF9F08E76D8A9965BA5BF0A7CD2591FFC8D8F284F07FD33D827FDEBC79C3
+      8D4DEF894B47B59DB6293F86AB3F2EF4DF7A83F40BEBCDD26F90CDD97E6A9313
+      BADE874F1E88C0F45A1C11FA5DBF2BBFF3EACD2B327FFEFC610A9AEAB0116437
+      4C7FE7FEEA5A74FDF99B636783E4CC0F0BFDDE786AB527BAFCCD3B37A4971C9E
+      135EB5276372C192A46E90D8B13347D4C061F5EC8910D05F60FFD66DCF6FC317
+      3E303C7BFBE4089335229F9F3C79C2B7FAC4E260B0BB8F0AFDBFFBF08E2421BD
+      403DBC263B047F83F46C3ABDDA77CAF1B63210DB718BF26362EC0661EB8DD22F
+      417A261D68CB2353FF0BB0FE836D7940F70781D8C65B047F01E3969390DEABB7
+      AEC85A1E87C4C7A633AB7D40E167B856E0EBEC1D938389B1BB7A7B763738BCF6
+      8A7E07A6533E90D8A11307544174DA82F069AD7BCAEBB69FDEE48C2D9DAD3BB1
+      DC1718CE7F40FACBB6A74C4597CFDD1EB900964E8069F877F2A4B0896037DFBC
+      220D4C535DC0B405D6EBBA43FDE193E74F04D1F5CF3F3E351539ADDA6D927F69
+      B759FE99C53121B898D356E547C0B4AE8ECD6FA72F9DD4B63E2FFC1F593D927B
+      7E82F216308F09E10A9B1F3F7E307A755B6C3C7BE18CECFA33CB8340713BE558
+      5BD9FAD3CB8380E12C884D0F00392294D3
+    }
+  end
+end
